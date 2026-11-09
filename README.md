@@ -54,16 +54,18 @@ After editing the `Modelfile`, re-run `ollama create cod3r -f Modelfile` to rebu
 Modelfile        # model definition: base, parameters, system prompt
 knowledge/
   python/        # cheat sheets: argparse, pathlib, logging, subprocess, socket, regex
+  cpp/           # cheat sheets: modern C++17 basics, filesystem, POSIX sockets, CMake, memory safety
   security/      # (planned)
   windows-linux/ # (planned)
   templates/     # (planned)
   notes/         # (planned)
 ```
 
-The `knowledge/` folder holds reference material written for Cod3r and for you. The Python cheat sheets each have short examples that have been run on Python 3.10+, plus a "common mistakes" table. Ollama does not read this folder automatically. Paste a sheet into a chat, or pass it in the prompt:
+The `knowledge/` folder holds reference material written for Cod3r and for you. Each Python cheat sheet has short examples that have been run on Python 3.10+. Each C++ cheat sheet has examples compiled with `g++ -std=c++17 -Wall -Wextra -Wpedantic` and run (network examples use `127.0.0.1` only). Every sheet ends with a "common mistakes" table. Ollama does not read this folder automatically. Paste a sheet into a chat, or pass it in the prompt:
 
 ```bash
 ollama run cod3r "$(cat knowledge/python/subprocess.md) Using the notes above, write a safe ping wrapper."
+ollama run cod3r "$(cat knowledge/cpp/sockets-posix.md) Using the notes above, write a loopback echo server."
 ```
 
 ## Tested on
