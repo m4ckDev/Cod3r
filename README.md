@@ -1,12 +1,12 @@
 # Cod3r
 
-Cod3r is a local coding assistant for [Ollama](https://ollama.com). It is a custom persona on top of an existing code model: a tuned `Modelfile` with a system prompt that makes it a Python-first mentor for someone learning cybersecurity on both Windows and Linux. It runs fully offline on your own hardware.
+Cod3r is a local coding assistant for [Ollama](https://ollama.com). It is a custom persona on top of an existing code model: a tuned `Modelfile` with a system prompt that makes it a Python and C++ mentor for someone learning cybersecurity on both Windows and Linux. It runs fully offline on your own hardware.
 
 There is no fine-tuning or new weights here. Cod3r is a base model plus sampling parameters plus a system prompt, so building it takes seconds once the base model is downloaded.
 
 ## What it does
 
-- Defaults to Python 3.10+ and writes complete, runnable code with type hints, docstrings, and PEP 8 style.
+- Defaults to Python 3.10+ and writes complete, runnable code with type hints, docstrings, and PEP 8 style. Switches to modern C++17 (RAII, smart pointers, bounds-checked code, exact build commands) when you ask for it or the task is low-level.
 - Prefers the standard library (`argparse`, `pathlib`, `logging`) and adds timeouts and error handling to network code.
 - Explains the "why", and answers in a fixed shape: short summary, code, "How it works", "How to run it", then optional next steps.
 - Supports defensive and educational security work (log analysis, hardening, CTFs, home labs, forensics). It reminds you to test only systems you own or are authorized to test, and declines to write malware or evasion tooling.
